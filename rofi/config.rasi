@@ -1,0 +1,10 @@
+//@theme "/usr/share/rofi/themes/bspad.rasi"
+//@theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"
+//@theme "/usr/share/rofi/themes/clipboard.rasi"
+//@theme "/usr/share/rofi/themes/bspad.rasi"
+//@theme "/usr/share/rofi/themes/arthur.rasi"
+//@theme "/usr/share/rofi/themes/launcher.rasi"
+@theme "/usr/share/rofi/themes/launcher.rasi"
+//@theme "~/.cache/wal/colors-rofi-dark.rasi";
+
+
