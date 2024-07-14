@@ -3,9 +3,9 @@
 This repository contains dotfiles and configurations for setting up a highly customizable and efficient i3 window manager environment. These configurations enhance your workflow and aesthetic appeal with various tools and themes.
 
 ## Table of Contents
-  - Terminal : [Alacritty]([#alacritty](https://wiki.archlinux.org/title/Alacritty))
-  - Status-Bar : [Bumblebee-status]([#bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status))
-  - Shell : [Fish]([#fish](https://fishshell.com/))
+  - Terminal : [Alacritty](https://wiki.archlinux.org/title/Alacritty)
+  - Status-Bar : [Bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status)
+  - Shell : [Fish](https://fishshell.com/)
   - Window Manager : [i3](https://i3wm.org/)
   - Audio Player : [Pulse]([#pulse](https://wiki.archlinux.org/title/PulseAudio))
   - App Menu : [Rofi](https://wiki.archlinux.org/title/rofi)
