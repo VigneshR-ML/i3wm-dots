@@ -12,9 +12,9 @@ This repository contains dotfiles and configurations for setting up a highly cus
   - Compositor : [Picom](https://wiki.archlinux.org/title/picom)
 ##Screenshots
 
-[Screenshot1](https://github.com/KECWIKKI/i3wm-dots/blob/main/Screenshots/1720937090.png)
-[Screenshot2](https://github.com/KECWIKKI/i3wm-dots/blob/main/Screenshots/1720937126.png)
-[Screenshot3](https://github.com/KECWIKKI/i3wm-dots/blob/main/Screenshots/1720937162.png)
+![Screenshot1](https://github.com/KECWIKKI/i3wm-dots/blob/main/Screenshots/1720937090.png)
+![Screenshot2](https://github.com/KECWIKKI/i3wm-dots/blob/main/Screenshots/1720937126.png)
+![Screenshot3](https://github.com/KECWIKKI/i3wm-dots/blob/main/Screenshots/1720937162.png)
 ## Features
 - Custom configurations for various applications.
 - Enhanced visual themes and status bars.
