@@ -3,24 +3,13 @@
 This repository contains dotfiles and configurations for setting up a highly customizable and efficient i3 window manager environment. These configurations enhance your workflow and aesthetic appeal with various tools and themes.
 
 ## Table of Contents
-- [Features](#features)
-- [Installation](#installation)
-- [Configuration](#configuration)
-  - [Alacritty](#alacritty)
-  - [Bottom](#bottom)
-  - [Bumblebee-status](#bumblebee-status)
-  - [Fish](#fish)
-  - [GTK-3.0](#gtk-30)
-  - [Htop](#htop)
-  - [i3](#i3)
-  - [i3lock](#i3lock)
-  - [i3status](#i3status)
-  - [Neofetch](#neofetch)
-  - [Pulse](#pulse)
-  - [Rofi](#rofi)
-  - [XFCE4](#xfce4)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
+  - Terminal : [Alacritty]([#alacritty](https://wiki.archlinux.org/title/Alacritty))
+  - Status-Bar : [Bumblebee-status]([#bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status))
+  - Shell : [Fish]([#fish](https://fishshell.com/))
+  - Window Manager : [i3](https://i3wm.org/)
+  - Audio Player : [Pulse]([#pulse](https://wiki.archlinux.org/title/PulseAudio))
+  - App Menu : [Rofi](https://wiki.archlinux.org/title/rofi)
+  - Compositor : [Picom](https://wiki.archlinux.org/title/picom)
 
 ## Features
 - Custom configurations for various applications.
@@ -63,25 +52,5 @@ Using the resolution enhancer on such systems may lead to:
 
 Special thanks to the following individuals for their inspiring work:
 
-- [SreeHarshan](https://github.com/SreeHarshan) for inspiration.
+- [SreeHarshan](https://github.com/SreeHarshan/dotfiles) for inspiration.
 - [tobi-wan-kenobi](https://github.com/tobi-wan-kenobi) for the concept used in [bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status).
-
-
-## Contributing
-
-If you'd like to contribute to this project, please follow the standard GitHub flow:
-
-1. Fork the repository.
-2. Create a new branch:
-    ```bash
-    git checkout -b feature/new-feature
-    ```
-3. Commit your changes:
-    ```bash
-    git commit -m 'Add new feature'
-    ```
-4. Push to the branch:
-    ```bash
-    git push origin feature/new-feature
-    ```
-5. Create a pull request.
