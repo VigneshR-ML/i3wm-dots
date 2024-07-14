@@ -7,7 +7,7 @@ This repository contains dotfiles and configurations for setting up a highly cus
   - Status-Bar : [Bumblebee-status](https://github.com/tobi-wan-kenobi/bumblebee-status)
   - Shell : [Fish](https://fishshell.com/)
   - Window Manager : [i3](https://i3wm.org/)
-  - Audio Player : [Pulse]([#pulse](https://wiki.archlinux.org/title/PulseAudio))
+  - Audio Player : [Pulse](https://wiki.archlinux.org/title/PulseAudio)
   - App Menu : [Rofi](https://wiki.archlinux.org/title/rofi)
   - Compositor : [Picom](https://wiki.archlinux.org/title/picom)
 ##Screenshots
