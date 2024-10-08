@@ -1,0 +1,157 @@
+# Define the mod key (Super key)
+set $mod Mod4
+
+# Set wallpaper keybinding
+bindsym $mod+w exec --no-startup-id  python3 /home/archlinux/.config/i3/scripts/random_wallpaper.py
+# exec_always --no-startup-id python3 /home/archlinux/.config/i3/scripts/random_wallpaper.py
+bindsym $mod+Shift+w exec --no-startup-id feh --bg-fill Downloads/Wallpapers/2.jpg
+
+# Autostart applications
+set $wallpaper_path Downloads/Wallpapers/100.jpg
+
+# Define movements keys
+set $up l
+set $down k
+set $left j
+set $right semicolon
+
+# Define font
+font pango:monospace 10
+
+#set layout us
+exec --no-startup-id setxkbmap us
+
+# Define workspaces
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Assign workspaces to keys
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# Start rofi
+bindsym $mod+d exec --no-startup-id rofi -modi drun -show drun -theme ~/.cache/wal/colors-rofi-dark.rasi
+
+# Restart i3 inplace
+bindsym $mod+Shift+r restart
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Kill focused window
+bindsym $mod+x kill
+
+# Use Mouse+$mod to drag floating windows
+floating_modifier $mod
+
+# Toggle tiling/floating
+bindsym $mod+Shift+space floating toggle
+
+# Change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Move focused window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Start terminal
+bindsym $mod+Return exec --no-startup-id alacritty;focus
+
+# Start pavucontrol
+bindsym $mod+u exec --no-startup-id pavucontrol
+
+# Start nemo
+bindsym $mod+z exec --no-startup-id thunar;focus
+
+
+# For F11 key (Print key)
+bindsym Print exec maim -s --format jpg /dev/stdout | tee /home/archlinux/Pictures/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png -i && notify-send "Screenshot taken"
+
+# For $mod+F11 (Windows/Super key + F11)
+bindsym $mod+Print exec maim --select | tee /home/archlinux/Pictures/Screenshots/$(date +%s).png | xclip -sel c -t image/png && notify-send "Screenshot taken"
+
+# Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Brightness controls
+bindsym XF86MonBrightnessUp exec light -A 5
+bindsym XF86MonBrightnessDown exec light -U 5
+
+# Bar toggle
+bindsym $mod+b bar mode toggle
+bindsym $mod+i bar mode invisible
+
+# Gaps
+for_window [class="^.*"] border pixel 1
+gaps inner 5
+gaps outer 1
+
+# Resize mode
+bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym $left resize shrink width 10 px or 10 ppt
+    bindsym $down resize grow height 10 px or 10 ppt
+    bindsym $up resize shrink height 10 px or 10 ppt
+    bindsym $right resize grow width 10 px or 10 ppt
+    bindsym Left resize shrink width 1 px or 1 ppt
+    bindsym Down resize grow height 1 px or 1 ppt
+    bindsym Up resize shrink height 1 px or 1 ppt
+    bindsym Right resize grow width 1 px or 1 ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+exec --no-startup-id xrdb -merge ~/.cache/wallust/colors.Xresources
+exec_always --no-startup-id wal -i $wallpaper_path
+#exec --no-startup-id wallust run $wallpaper_path
+exec_always --no-startup-id picom --config ~/.config/i3/picom.conf -b
+exec_always --no-startup-id feh --bg-fill $wallpaper_path
+exec --no-startup-id ~/.config/i3/scripts/mouse.sh &
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
+#Borders
+for_window [class="^.*"] border pixel 0
+for_window [title="^.*"] border pixel 0
+
+#power save
+exec --no-startup-id xset s 480 dpms 600 600 600
+
+#auto-Tiling
+exec_always --no-startup-id i3-auto-tiling
+exec_always --no-startup-id ~/.config/polybar-collection/launch.sh &
